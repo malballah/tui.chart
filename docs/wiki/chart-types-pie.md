@@ -190,7 +190,7 @@ tui.chart.pieChart(container, rawData, options);
 
 ### Label filter option in the Series area.
 
-you want to hide the `value label 'or` legend label` in a specific situation.
+you want to hide the `value label` or `legend label` in a specific situation.
 
 ##### Example
 
