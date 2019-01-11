@@ -186,3 +186,33 @@ tui.chart.pieChart(container, rawData, options);
 ![Semi Circle Donut Chart](https://user-images.githubusercontent.com/35218826/36882331-82acfd1e-1e16-11e8-8bb6-351a91487d4e.png)
 
 * _[Sample](https://nhnent.github.io/tui.chart/latest/tutorial-example07-05-pie-chart-semi-circle-donut.html)_
+
+
+### Label filter option in the Series area.
+
+you want to hide the `value label 'or` legend label` in a specific situation.
+
+##### Example
+
+```javascript
+var options = {
+    ...
+    series: {
+        ...
+        showLegend: true,
+        showLabel: true,
+        labelFilter: function(labelInfo) {
+            console.log(labelInfo)
+            /* {
+             *     value: "Chrome", // legend name or value
+             *     labelType: "legend", // legend or value
+             *     seriesName: "Chrome", // Checks the identity of the value if labelType is value.
+             *     ratio: 0.46020000000000005
+             * }
+             */
+            return labelInfo.ratio > 0.05; // Less than 5% does not expose.
+        }
+    }
+};
+```
+
